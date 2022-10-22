@@ -25,15 +25,22 @@ const assertArrayEqual = function(arr1, arr2) {
 
 const middle = function(arr) {
   let middleArr = [];
-  let lengthArr = arr.length;
-  if (lengthArr < 2) {
+  const lengthArr = arr.length;
+  const middleNum = Math.ceil(arr.length / 2);
+  if (lengthArr <= 2) {
     return middleArr;
   } else {
     if (lengthArr % 2 === 0) {
-      middleArr.push(arr[(lengthArr / 2) - 1]);
-      console.log(middleArr);
+      middleArr.push(arr[middleNum - 1]);
+      middleArr.push(arr[middleNum]);
+    } else {
+      middleArr.push(arr[middleNum - 1]);
     }
   }
-}
+  return middleArr;
+};
 
-console.log(middle([1, 1, 2, 2, 3, 3]));
+const  testArr = [1, 2, 3, 4, 5, 6, 7, 8];
+assertArrayEqual(middle(testArr), [4, 5]);
+
+console.log(middle([]));
