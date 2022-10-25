@@ -1,10 +1,15 @@
 //Assert Equal to compare values
-const assertEqual = (actual, expected) => {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
   } else {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
   }
+  return true;
 };
 
 //Assert equal for array
@@ -16,43 +21,25 @@ const assertArrayEqual = function(arr1, arr2) {
   }
 };
 
-
+//Function declaration
 const letterPositions = function(sentence) {
 let result = {};
 let strNoSpace = sentence.split(" ").join("");
-
+//Creation of key for result object
 for (let item of strNoSpace) {
   result[item] = [];
-  // result[item].push(sentence.indexOf(item))
 }
-
-
-
-
+//adding position of letters in the proper key
 for (i = 0; i < sentence.length; i++) {
   for (let item in result) {
-    //console.log(result[item])
     if (item === sentence[i] && sentence[i] !== " ") {
       result[item].push(i);
     } 
   }
 }
-
-
-// for (let item in result) {
-  
-// }
-// for (let i = 0; i < sentNoSpace.length; i++) {
-//   sentIndex = sentNoSpace[i]
-//   if (result[sentLetter]) {
-//     // console.log(sentLetter)
-//     result[sentLetter].push(i);
-//   } else {
-//     console.log(sentLetter)
-//     result[sentLetter] = [i];
-//   }
-// }
 return result;
 };
 
+
 console.log(letterPositions("lighthouse in the house"));
+assertArrayEqual(letterPositions("hello").e, [1]);
