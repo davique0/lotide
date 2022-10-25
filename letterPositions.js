@@ -19,13 +19,29 @@ const assertArrayEqual = function(arr1, arr2) {
 
 const letterPositions = function(sentence) {
 let result = {};
-let sentLetter = '';
-let sentNoSpace = sentence.split(" ").join("");
+let strNoSpace = sentence.split(" ").join("");
 
-for (let item of sentNoSpace) {
-  result[item] = item;
+for (let item of strNoSpace) {
+  result[item] = [];
+  // result[item].push(sentence.indexOf(item))
 }
 
+
+
+
+for (i = 0; i < sentence.length; i++) {
+  for (let item in result) {
+    //console.log(result[item])
+    if (item === sentence[i] && sentence[i] !== " ") {
+      result[item].push(i);
+    } 
+  }
+}
+
+
+// for (let item in result) {
+  
+// }
 // for (let i = 0; i < sentNoSpace.length; i++) {
 //   sentIndex = sentNoSpace[i]
 //   if (result[sentLetter]) {
@@ -37,6 +53,6 @@ for (let item of sentNoSpace) {
 //   }
 // }
 return result;
-}
+};
 
-console.log(letterPositions('hola'));
+console.log(letterPositions("lighthouse in the house"));
