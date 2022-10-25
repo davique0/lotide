@@ -9,9 +9,7 @@ const assertEqual = (actual, expected) => {
 const countLetters = function(str) {
   let result = {};
   let strNoSpace = str.split(" ").join("");
-  console.log(strNoSpace);
   for (let item of strNoSpace) {
-    // console.log(item)
     if (result[item]) {
       result[item] += 1;
     } else {
@@ -19,6 +17,10 @@ const countLetters = function(str) {
     }
   }
   return result;
-}
+};
 
-console.log(countLetters("lighthouse in the house"));
+const result1 = countLetters("lighthouse in the house");
+assertEqual(result1['h'], 4);
+assertEqual(result1['l'], 1);
+assertEqual(result1['u'], 2);
+assertEqual(result1[' '], undefined);
