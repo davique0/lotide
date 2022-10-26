@@ -21,3 +21,5 @@ const ba = {
 };
 
 eqObjects(ab, ba); 
+
+eqObjects(ab, bas);
