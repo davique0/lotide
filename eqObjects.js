@@ -26,8 +26,18 @@ const eqObjects = function(object1, object2) {
     return false;
   } else {
     for (const key of objOneKeyArr) {
-          if (object1[key] !== object2[key]) {
-      return false;
+      if (Array.isArray(object1[key])) {
+        if (object1[key].length !== object2[key].length) {
+          return false;
+        } else {
+          for (let i = 0; i < object1[key].length; i++) {
+            if (object1[key][i] !== object2[key][i]) {
+              return false;
+            }
+          }
+        }
+      } else if (object1[key] !== object2[key]) {
+        return false;
       }
     }
   }
@@ -46,10 +56,10 @@ const ba = {
 
 console.log(eqObjects(ab, ba));
 
-const cd = { c: "1", d: ["2", 3] };
+const cd = { c: "1", d: ["2", 3, 4] };
 const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
+assertEqual(eqObjects(cd, dc), false); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false
+assertEqual(eqObjects(cd, cd2), true); // => false
 
