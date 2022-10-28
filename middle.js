@@ -15,7 +15,7 @@ const eqArrays = function(arr1, arr2) {
 
 //Prints passed if 2 arrays are equal and fail if the 2 arrays are different
 
-const assertArrayEqual = function(arr1, arr2) {
+const assertArraysEqual = function(arr1, arr2) {
   if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅ Assertion Passed: [${arr1}] is equal to [${arr2}]`);
   } else {
@@ -41,6 +41,6 @@ const middle = function(arr) {
 };
 
 const  testArr = [1, 2, 3, 4, 5, 6, 7, 8];
-assertArrayEqual(middle(testArr), [4, 5]);
+assertArraysEqual(middle(testArr), [4, 5]);
 
 console.log(middle([]));
