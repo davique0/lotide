@@ -1,27 +1,4 @@
-//Compare 2 arrays, True if they are equal, False if they are not
-
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-  }
-  return true;
-};
-
-//Prints passed if 2 arrays are equal and fail if the 2 arrays are different
-
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅✅✅ Assertion Passed: [${arr1}] is equal to [${arr2}]`);
-  } else {
-    console.log(`❌❌❌ Assertion Failed: [${arr1}] is different than [${arr2}]`);
-  }
-};
+//extracts the middle item of an array if odd length or the 2 middles if it is an even length
 
 const middle = function(arr) {
   let middleArr = [];
@@ -40,7 +17,4 @@ const middle = function(arr) {
   return middleArr;
 };
 
-const  testArr = [1, 2, 3, 4, 5, 6, 7, 8];
-assertArraysEqual(middle(testArr), [4, 5]);
-
-console.log(middle([]));
+module.exports = middle;
