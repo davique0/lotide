@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@davique/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "My mini version of Lodash library, for educational purposes LHL bootcamp",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/davique0/lotide.git"
   },
-  "author": "",
+  "author": "Mario D. Gutierrez",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/davique0/lotide/issues"
